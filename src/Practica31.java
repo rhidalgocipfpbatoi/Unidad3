@@ -65,6 +65,21 @@ public class Practica31 {
 
     }
 
+    public static void buscarNota(double[] notas) {
+
+        System.out.println("¿Qué nota quieres buscar?");
+        double notaABuscar = scanner.nextDouble();
+
+        for (int i = 0; i < topeNota; i++) {
+            if (notaABuscar == notas[i]) {
+                System.out.println("La nota está en la posición " + (i+1));
+                return;
+            }
+        }
+
+        System.out.printf("La nota %.2f no existe", notaABuscar);
+    }
+
     public static void main(String[] args) {
 
         int numNotas = numeroNotas();
@@ -72,5 +87,6 @@ public class Practica31 {
         mostrarNotas(notas);
         muestraMedia(notas);
         muestraNotaMaxima(notas);
+        buscarNota(notas);
     }
 }
