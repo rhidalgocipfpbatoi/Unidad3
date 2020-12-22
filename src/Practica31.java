@@ -11,19 +11,24 @@ public class Practica31 {
 
         double[] notas = new double[numNotas];
 
+        int i;
         // Introducir las notas
-        for (int i = 0; i < numNotas; i++) {
+        for (i = 0; i < numNotas; i++) {
             System.out.println("Introduce la nota " + (i+1));
             notas[i] = scanner.nextDouble();
             if (notas[i] > 10 || notas[i] < 0) {
-                System.out.println("Error, nota incorrecta");
-                i--;
+                if (notas[i] == -1) {
+                    break;
+                } else {
+                    System.out.println("Error, nota incorrecta");
+                    i--;
+                }
             }
         }
 
         // Mostrar las notas
-        for (int i = 0; i < notas.length; i++) {
-            System.out.println(notas[i]);
+        for (int j = 0; j < i; j++) {
+            System.out.println(notas[j]);
         }
     }
 }
